@@ -18,7 +18,8 @@ function populate() {
 
 		showProgress();
 	}
-};
+		
+	};
 
 function guess(id,guess) {
 	var button = document.getElementById(id);
@@ -41,6 +42,31 @@ function showScores() {
 		element.innerHTML = gameOverHtml;
 }
 
+//function addImage() {
+	//var src= "https://giphy.com/embed/rSCVJasn8uZP2";
+	//show benderPic("https://giphy.com/embed/rSCVJasn8uZP2",480,346, "bender high five");
+//}
+
+//function showImage(src,width,height,alt){
+	//var img = document.createElement('img');
+	//img.src = src
+	//img.width = width;
+	//img.height = height;
+	//img.alt = alt;
+	//document.body.appendChild(img);
+//}
+
+function countDown(secs,elem) {
+	var elementTime = document.getElementById(elem);
+	elementTime.innerHTML = "You have " + secs + " seconds left.";
+	if (secs < 1) {
+		clearTimeout(timer);
+		showScores();
+	}
+	secs--;
+	var timer = setTimeout('countDown('+secs+', "'+elem+'")', 1000);
+}
+
 var questions = [
 	new Question("Where was Bender born?", ["USA", "Belgium", "Cuba", "Mexico"], "Mexico"),
 	new Question("What is the name of Leela's pet?", ["Nabbler", "Nibbler", "Nobbler", "Nubbler"], "Nibbler"),
@@ -54,4 +80,5 @@ var questions = [
 
 var quiz = new Quiz(questions);
 
+countDown(70,'status');
 populate();
