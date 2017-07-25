@@ -1,6 +1,7 @@
 function populate() {
 	if(quiz.isEnded()) {
 		showScores();
+		//showImage();
 	}
 
 	else {
@@ -42,19 +43,11 @@ function showScores() {
 		element.innerHTML = gameOverHtml;
 }
 
-//function addImage() {
-	//var src= "https://giphy.com/embed/rSCVJasn8uZP2";
-	//show benderPic("https://giphy.com/embed/rSCVJasn8uZP2",480,346, "bender high five");
-//}
-
-//function showImage(src,width,height,alt){
-	//var img = document.createElement('img');
-	//img.src = src
-	//img.width = width;
-	//img.height = height;
-	//img.alt = alt;
-	//document.body.appendChild(img);
-//}
+/*function showImage() {
+	var img = document.createElement("IMG");
+	//img.src = "../TriviaGame/assets/images/giphy.gif";
+	document.getElementById('imageDiv').innerHTML = '<img src = "../TriviaGame/assets/images/giphy.gif" />';
+}*/
 
 function countDown(secs,elem) {
 	var elementTime = document.getElementById(elem);
